@@ -88,7 +88,8 @@ button{
 
     width: 70%;
     margin-left: 15%;
-    margin-bottom: 15%;
+    margin-bottom: 1%; /*px*/
+
 }
 h2.quizzQuestion{
     color: #fff;
@@ -101,8 +102,12 @@ ul.quizzRes{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    margin-left: -30px;
+    margin-right: 10px;
 }
 label{
+    display: flex;
+    align-items: center;
     width: 100%;
     border-radius: 40px;
     box-shadow: 0 0 8px rgba(0,0,0,.1);
@@ -129,8 +134,11 @@ input{
     content:" D ";
 }
 :before{
-    /*
+
+    height: 30px;
+    min-width: 30px;
     margin-right: 12px;
+    padding-top: 3px;
     border-radius: 100px;
     font-family: 'Geoheadist';
     color: #fff;
@@ -138,7 +146,25 @@ input{
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    */
+    
+}
+
+.quizzRes li{
+    display: flex;
+    width: 48%;
+    margin: 1.5% 1%;
+}
+
+#quizz button{
+    margin-bottom: 15%; /*px*/
+    width: 50%;
+    margin-left: 25%;
+    border: 6px solid rgba(255,255,255,.2);
+    padding: 10px 40px;
+    border-radius: 99px;
+    color: #fff;
+    font-size: 1.2em;
+    background: #cc3d6a;
 }
 /*
 #43339d
@@ -146,4 +172,7 @@ input{
 
 valdier
 cc3d6a
+
+Mettre en  bleu pour les faciles, et en rouge pour les durs
+Remplacer les % par des px
 */
