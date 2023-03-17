@@ -199,6 +199,10 @@ button:hover, label:hover{
     background-color: orange !important;
 }
 
+.next button{
+    margin-bottom: 15%;
+    background-color: blue !important;
+}
 
 /*
 #43339d
