@@ -1,5 +1,4 @@
 var timer = 100
-var i = 0
 var h = document.querySelector('h1')
 var can = false
 h.addEventListener("mousedown", (e) => {

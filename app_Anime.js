@@ -3,6 +3,7 @@ next.forEach(e=>{
     e.setAttribute('hidden', 'hidden')
 })
 var score = 0;
+var i = 0
 
 var key = 4 //key*value 
 
@@ -11,9 +12,18 @@ var cheat = false;
 var box = document.querySelectorAll('.quiznumber')
 //var box = document.querySelectorAll('.quizzBox')
 
-
+box[4].addEventListener('click', cheater)
+console.log(box[4])
 var buttons = document.querySelectorAll('.buttons')
 
+function cheater(){
+    console.log(i)
+    i++
+    if (i >=10){
+        cheat = true
+        alert("c'est pas bien de tricher, mais bon pas grave")
+    }
+}
 
 
 buttons.forEach((e)=>{
@@ -61,14 +71,17 @@ function valider(){
                 box[e.value-1].style.backgroundColor = '#83bd71'
                 score ++
                 bon = true;
+                if (cheat && e.children[1].style.backgroundColor == 'orange' ){
+                    e.children[1].style.backgroundColor = '#83bd71'
+                }
             }else if (e.children[0].style.backgroundColor == 'orange'){
                 e.style.removeProperty("background-color")
-                if (!bon){
+                if (!bon && !cheat){
                     box[e.value-1].style.backgroundColor = '#f44242'
                 }
                 e.children[1].style.backgroundColor = '#cc3d6a'
             }else{
-                if (!bon){
+                if (!bon && !cheat){
                     box[e.value-1].style.backgroundColor = '#f44242'
                 }
             }
@@ -83,9 +96,8 @@ function valider(){
     
 }
 
+//quand cheat enlever la bonne réponse
 
-//mettre un id différent sur les 4 réponses (les memes pour toutes les questions) et modifier une cle de base (césar) en la mutipliant par la value du bouton valider utilisé
-//ne marche que sur un quizz ou alors la partie de la clé sur un différent
 
 /*key*value
 key = 3
