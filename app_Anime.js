@@ -26,23 +26,29 @@ inputs.forEach((e)=>{
 
 function res(){
     var value = this.value
+    var id = this.id
     inputs.forEach(element => {
         if (element.value === value){
             for (let i = 0; i < element.children.length; i++){
                 element.children[i].style.removeProperty("background-color")
-
             }
+            
+            
+            if (element.children[0].id !== id && element.children[0].checked === true && element.value == value){
+                element.children[0].checked = false;
+            }
+            
         }
     });
     for (let i = 0; i < this.children.length; i++){
         this.children[i].style.backgroundColor = 'orange'
 
     }
-
-
 }
+
 function valider(){
     var value2 = this.value
+    var bon = false
     this.removeEventListener('click', valider)
     inputs.forEach(e=>{
         if (this.value == e.value){
@@ -51,16 +57,20 @@ function valider(){
                 e.children[1].style.backgroundColor = '#83bd71'
 
             }
-
-            if ((e.id == 'bonGod' && e.children[0].checked) || cheat){
+            if ((e.id == 'bonGod' && e.children[0].style.backgroundColor == 'orange') || cheat){
                 box[e.value-1].style.backgroundColor = '#83bd71'
                 score ++
-            }else if (e.children[0].checked){
+                bon = true;
+            }else if (e.children[0].style.backgroundColor == 'orange'){
                 e.style.removeProperty("background-color")
+                if (!bon){
+                    box[e.value-1].style.backgroundColor = '#f44242'
+                }
                 e.children[1].style.backgroundColor = '#cc3d6a'
-                box[e.value-1].style.backgroundColor = '#f44242'
             }else{
-                box[e.value-1].style.backgroundColor = '#f44242'
+                if (!bon){
+                    box[e.value-1].style.backgroundColor = '#f44242'
+                }
             }
         }
     })
@@ -74,103 +84,98 @@ function valider(){
 }
 
 
-
-
-//DECHECKED !!!!!!!!!!!! (quand tu as checked meme si il ne l'est pas à la fin, il est en rouge)
-
-
 //mettre un id différent sur les 4 réponses (les memes pour toutes les questions) et modifier une cle de base (césar) en la mutipliant par la value du bouton valider utilisé
 //ne marche que sur un quizz ou alors la partie de la clé sur un différent
 
 /*key*value
 key = 3
 bonGod = ERQJR G
-mauBad = PDXED G
+mauBat = PDXED W
 tjrPas = WMUSD V
-tesNul = ERQJR G
+tesNul = WHVQX O
 
 key = 6
-bonGod = 
-mauBad = 
-tjrPas = 
-tesNul = 
+bonGod = HUTMU J
+mauBad = SGAHG Z
+tjrPas = ZPXVG Y
+tesNul = ZKYTA R
 
 key = 9
-bonGod = 
-mauBad = 
-tjrPas = 
-tesNul = 
+bonGod = KXWPX M
+mauBad = VJDKJ C
+tjrPas = CSAYJ B
+tesNul = CNBWD U
 
 key = 12
-bonGod = 
-mauBad = 
-tjrPas = 
-tesNul = 
+bonGod = NAZSA P
+mauBad = YMGNM F
+tjrPas = FVDBM E
+tesNul = FQEZG X
 
 key = 15
-bonGod = 
-mauBad = 
-tjrPas = 
-tesNul = 
+bonGod = QDCVD S
+mauBad = BPJQP I
+tjrPas = IYGEP H
+tesNul = ITHCJ A
 
 key = 18
-bonGod = 
-mauBad = 
-tjrPas = 
-tesNul = 
+bonGod = TGFYG V
+mauBad = ESMTS L
+tjrPas = LBJHS K
+tesNul = LWKFM D
 
 key = 21
-bonGod = 
-mauBad = 
-tjrPas = 
-tesNul = 
+bonGod = WJIBJ Y
+mauBad = HVPWV O
+tjrPas = OEMKV N
+tesNul = OZNIP G
 
 key = 24
-bonGod = 
-mauBad = 
-tjrPas = 
-tesNul = 
+bonGod = ZMLEM B
+mauBad = KYSZY R
+tjrPas = RHPNY Q
+tesNul = RCQLS J
 
 key = 27
-bonGod = 
-mauBad = 
-tjrPas = 
-tesNul = 
+bonGod = CPOHP E
+mauBad = NBVCB U
+tjrPas = UKSQB T
+tesNul = UFTOV M
 
 key = 30
-bonGod = 
-mauBad = 
-tjrPas = 
-tesNul = 
+bonGod = FSRKS H
+mauBad = QEYFE X
+tjrPas = XNVTE W
+tesNul = XIWRY P
 
 key = 33
-bonGod = 
-mauBad = 
-tjrPas = 
-tesNul = 
+bonGod = IVUNV K
+mauBad = THBIH A
+tjrPas = AQYWH Z
+tesNul = ALZUB S
 
 key = 36
-bonGod = 
-mauBad = 
-tjrPas = 
-tesNul = 
+bonGod = LYXQY N
+mauBad = WKELK D
+tjrPas = DTBZK C
+tesNul = DOCXE V
 
 key = 39
-bonGod = 
-mauBad = 
-tjrPas = 
-tesNul = 
+bonGod = OBATB Q
+mauBad = ZNHON G
+tjrPas = GWECN F
+tesNul = GRFAH Y
 
 key = 42
-bonGod = 
-mauBad = 
-tjrPas = 
-tesNul = 
+bonGod = REDWE T
+mauBad = CQKRQ J
+tjrPas = JZHFQ I
+tesNul = JUIDK B
 
 key = 45
-bonGod = 
-mauBad = 
-tjrPas = 
-tesNul = 
+bonGod = UHGZH W
+mauBad = FTNUT M
+tjrPas = MCKIT L
+tesNul = MXLGN E
 
 */
