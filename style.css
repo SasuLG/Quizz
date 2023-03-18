@@ -195,13 +195,35 @@ button:hover, label:hover{
     transform: scale(1.05,1.05);
 }
 
-.inputChecked{
+.divRes{
     background-color: orange !important;
 }
 
 .next button{
     margin-bottom: 15%;
     background-color: blue !important;
+}
+
+svg{
+    width: 150px;
+    height: 150px;
+}
+
+svg circle{
+    fill: none;
+    stroke: #f44242;
+    stroke-width: 8px;
+    transform: translate(5px, 5px);
+    stroke-dasharray: 440;
+    /*stroke-dashoffset: 440;*/
+    stroke-linecap: round;
+}
+
+span{
+    position: absolute;
+    top: 29%;
+    transform: translate(-88px, 1px);
+    font-size: 1.5em;
 }
 
 /*

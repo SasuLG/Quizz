@@ -1,7 +1,15 @@
+//var temp = document.querySelector('label')
+//console.log(temp.textContent)
+var percent = document.querySelector('span')
+var circle = document.querySelector('circle')
+
+
 var next = document.querySelectorAll('.next')
 next.forEach(e=>{
     e.setAttribute('hidden', 'hidden')
 })
+var resultat = document.querySelector('#resPercent')
+resultat.setAttribute('hidden', 'hidden')
 var score = 0;
 var i = 0
 
@@ -13,11 +21,9 @@ var box = document.querySelectorAll('.quiznumber')
 //var box = document.querySelectorAll('.quizzBox')
 
 box[4].addEventListener('click', cheater)
-console.log(box[4])
 var buttons = document.querySelectorAll('.buttons')
 
 function cheater(){
-    console.log(i)
     i++
     if (i >=10){
         cheat = true
@@ -67,12 +73,16 @@ function valider(){
                 e.children[1].style.backgroundColor = '#83bd71'
 
             }
-            if ((e.id == 'bonGod' && e.children[0].style.backgroundColor == 'orange') || cheat){
+            if ((e.id == 'bonGod' && e.children[0].style.backgroundColor == 'orange') || (cheat)){ //compte les 4 réponses
                 box[e.value-1].style.backgroundColor = '#83bd71'
                 score ++
                 bon = true;
                 if (cheat && e.children[1].style.backgroundColor == 'orange' ){
                     e.children[1].style.backgroundColor = '#83bd71'
+                    
+                }
+                if (cheat){
+                    score -= 0.75
                 }
             }else if (e.children[0].style.backgroundColor == 'orange'){
                 e.style.removeProperty("background-color")
@@ -94,10 +104,41 @@ function valider(){
     })
     this.setAttribute('hidden', 'hidden')
     
+    
+    if (value2 == 15){
+        var scorePercent = score/(box.length-1)*100
+        percent.innerHTML = parseInt(scorePercent) + "%"
+
+        resultat.removeAttribute('hidden', 'hidden')
+        var p = document.createElement('p')
+        resultat.append(p)
+        if (scorePercent <= 10){
+            p.innerHTML = "Bon joue sérieusement stp (j'ai pas fait tout ça pou rien)"
+        }else if(scorePercent < 50){
+            p.innerHTML = "T'es pas très bon toi"
+        }else if (scorePercent <= 80){
+            p.innerHTML = "Pas mal tu t'y connais bien"
+        }else if (scorePercent <= 90){
+            p.innerHTML = "Waw t'es chaud mon reuf"
+        }else{
+            p.innerHTML = "Fin bro, prend une douche stp (non je dec t'es trop fort)"
+        }
+
+        var divRes = document.createElement('div')
+        divRes.classList.add('divRes')
+        resultat.append(divRes)
+        var listScore = document.createElement('p')
+        listScore.innerHTML = "ton score est de " + score + "/" + (box.length-1)
+        divRes.append(listScore)
+        circle.style.strokeDashoffset = 440- (scorePercent*440) /100
+    }
+
 }
 
-//quand cheat enlever la bonne réponse
 
+//quand cheat enlever la bonne réponse
+//mettre le cercle en vert quand >50% et en rouge sinon
+//metter un bordure au cercle
 
 /*key*value
 key = 3
