@@ -221,9 +221,23 @@ svg circle{
 
 span{
     position: absolute;
-    top: 29%;
-    transform: translate(-88px, 1px);
+    top: 42%;
+    transform: translate(4px);
     font-size: 1.5em;
+}
+
+#rond{
+    display: flex;
+    justify-content: center;
+}
+span, p{
+    color: white;
+}
+
+.divRes{
+    margin: 1%;
+    display: flex;
+    justify-content: center;
 }
 
 /*

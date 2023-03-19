@@ -111,7 +111,7 @@ function valider(){
 
         resultat.removeAttribute('hidden', 'hidden')
         var p = document.createElement('p')
-        resultat.append(p)
+        resultat.prepend(p)
         if (scorePercent <= 10){
             p.innerHTML = "Bon joue sérieusement stp (j'ai pas fait tout ça pou rien)"
         }else if(scorePercent < 50){
@@ -131,6 +131,12 @@ function valider(){
         listScore.innerHTML = "ton score est de " + score + "/" + (box.length-1)
         divRes.append(listScore)
         circle.style.strokeDashoffset = 440- (scorePercent*440) /100
+        if (scorePercent >=50){
+            circle.style.stroke = '#83bd71'
+            box[box.length-1].style.backgroundColor = '#83bd71'
+        }else{
+            box[box.length-1].style.backgroundColor = '#f44242'
+        }
     }
 
 }
