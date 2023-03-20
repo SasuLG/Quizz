@@ -13,7 +13,6 @@ resultat.setAttribute('hidden', 'hidden')
 var score = 0;
 var i = 0
 
-var key = 4 //key*value 
 
 var inputs = document.querySelectorAll('li')
 var cheat = false;
@@ -69,11 +68,11 @@ function valider(){
     inputs.forEach(e=>{
         if (this.value == e.value){
             e.removeEventListener('click', res)
-            if (e.id == 'bonGod'){
+            if (e.id == key*e.value+1000){//
                 e.children[1].style.backgroundColor = '#83bd71'
 
             }
-            if ((e.id == 'bonGod' && e.children[0].style.backgroundColor == 'orange') || (cheat)){ //compte les 4 réponses
+            if ((e.id == key*e.value+1000 && e.children[0].style.backgroundColor == 'orange') || (cheat)){ //compte les 4 réponses
                 box[e.value-1].style.backgroundColor = '#83bd71'
                 score ++
                 bon = true;
@@ -143,8 +142,6 @@ function valider(){
 
 
 //quand cheat enlever la bonne réponse
-//mettre le cercle en vert quand >50% et en rouge sinon
-//metter un bordure au cercle
 
 /*key*value
 key = 3
