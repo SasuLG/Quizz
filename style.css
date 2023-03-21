@@ -218,7 +218,6 @@ svg circle{
     stroke-width: 8px;
     transform: translate(5px, 5px);
     stroke-dasharray: 440;
-    /*stroke-dashoffset: 440;*/
     stroke-linecap: round;
 }
 
@@ -243,14 +242,55 @@ span, p{
     justify-content: center;
 }
 
+.win{
+    box-shadow: 1px 5px 100px green !important;
+}
+
+.loose{
+    box-shadow: 1px 5px 100px red !important;
+}
+
+.finWin{
+    box-shadow: 1px 5px 100px white !important;
+}
+
+.fin{
+    box-shadow: 10px 10px 100px green, -10px -10px 100px red !important;
+}
+
+.hard .quizzBox{
+    background: #f44242 !important;
+}
+#niveauBonus{
+    margin-top: 15%;
+    display: flex;
+    padding: 20%;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    box-shadow: 1px -15px 1000px white !important
+}
+
+#niveauBonus a{
+    width: 100% !important;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    margin-top: 5%;
+}
+
+#niveauBonus button{
+    margin-bottom: 5% !important;
+    margin-left: 0;
+}
+
+#bonusButton{
+    margin-top: 10%;
+}
+
 /*
 #43339d
 #f44242
 
 valdier
 cc3d6a
-
-Mettre en  bleu pour les faciles, et en rouge pour les durs
-
-box-shadow: 10px 5px 5px red;
-*/
