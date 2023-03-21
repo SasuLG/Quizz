@@ -1,5 +1,6 @@
-//var temp = document.querySelector('label')
-//console.log(temp.textContent)
+var alphabet = "abcdefghijklmnopqrstuvwxyzéè'.0123456789()"
+alphabet += " "
+
 var percent = document.querySelector('span')
 var circle = document.querySelector('circle')
 
@@ -37,7 +38,9 @@ buttons.forEach((e)=>{
 
 inputs.forEach((e)=>{
     e.addEventListener('click', res)
+    //e.id = crypt(e.id, e.children[1].textContent)
 })
+
 
 function res(){
     var value = this.value
@@ -62,17 +65,22 @@ function res(){
 }
 
 function valider(){
+    /*
+    reponse.forEach(e=>{
+        var oui = decrypt(e.id, e.children[1].textContent)
+    })
+    */
     var value2 = this.value
     var bon = false
     this.removeEventListener('click', valider)
     inputs.forEach(e=>{
         if (this.value == e.value){
             e.removeEventListener('click', res)
-            if (e.id == key*e.value+1000){//
+            if (decrypt('wqzkgl', 'tricheur')== decrypt(e.id, e.children[1].textContent)){
                 e.children[1].style.backgroundColor = '#83bd71'
 
-            }
-            if ((e.id == key*e.value+1000 && e.children[0].style.backgroundColor == 'orange') || (cheat)){ //compte les 4 réponses
+            }  
+            if ((decrypt('wqzkgl', 'tricheur') == decrypt(e.id, e.children[1].textContent) && e.children[0].style.backgroundColor == 'orange') || (cheat)){
                 box[e.value-1].style.backgroundColor = '#83bd71'
                 score ++
                 bon = true;
@@ -141,97 +149,15 @@ function valider(){
 }
 
 
+
 //quand cheat enlever la bonne réponse
 
-/*key*value
-key = 3
-bonGod = ERQJR G
-mauBat = PDXED W
-tjrPas = WMUSD V
-tesNul = WHVQX O
 
-key = 6
-bonGod = HUTMU J
-mauBad = SGAHG Z
-tjrPas = ZPXVG Y
-tesNul = ZKYTA R
 
-key = 9
-bonGod = KXWPX M
-mauBad = VJDKJ C
-tjrPas = CSAYJ B
-tesNul = CNBWD U
 
-key = 12
-bonGod = NAZSA P
-mauBad = YMGNM F
-tjrPas = FVDBM E
-tesNul = FQEZG X
-
-key = 15
-bonGod = QDCVD S
-mauBad = BPJQP I
-tjrPas = IYGEP H
-tesNul = ITHCJ A
-
-key = 18
-bonGod = TGFYG V
-mauBad = ESMTS L
-tjrPas = LBJHS K
-tesNul = LWKFM D
-
-key = 21
-bonGod = WJIBJ Y
-mauBad = HVPWV O
-tjrPas = OEMKV N
-tesNul = OZNIP G
-
-key = 24
-bonGod = ZMLEM B
-mauBad = KYSZY R
-tjrPas = RHPNY Q
-tesNul = RCQLS J
-
-key = 27
-bonGod = CPOHP E
-mauBad = NBVCB U
-tjrPas = UKSQB T
-tesNul = UFTOV M
-
-key = 30
-bonGod = FSRKS H
-mauBad = QEYFE X
-tjrPas = XNVTE W
-tesNul = XIWRY P
-
-key = 33
-bonGod = IVUNV K
-mauBad = THBIH A
-tjrPas = AQYWH Z
-tesNul = ALZUB S
-
-key = 36
-bonGod = LYXQY N
-mauBad = WKELK D
-tjrPas = DTBZK C
-tesNul = DOCXE V
-
-key = 39
-bonGod = OBATB Q
-mauBad = ZNHON G
-tjrPas = GWECN F
-tesNul = GRFAH Y
-
-key = 42
-bonGod = REDWE T
-mauBad = CQKRQ J
-tjrPas = JZHFQ I
-tesNul = JUIDK B
-
-key = 45
-bonGod = UHGZH W
-mauBad = FTNUT M
-tjrPas = MCKIT L
-tesNul = MXLGN E
-
+/*
+bonGod : dzrIzh
+mauBat : olyDlx
+tjrPas : vuvRlw
+tesNul : vpwPfp
 */
