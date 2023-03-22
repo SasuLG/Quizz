@@ -258,7 +258,7 @@ span, p{
     box-shadow: 10px 10px 100px green, -10px -10px 100px red !important;
 }
 
-.hard .quizzBox{
+.hard .quizzBox, .bonus .quizzBox{
     background: #f44242 !important;
 }
 #niveauBonus{
@@ -288,6 +288,9 @@ span, p{
     margin-top: 10%;
 }
 
+audio{
+    margin-left: 35%;
+}
 /*
 #43339d
 #f44242

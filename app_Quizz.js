@@ -123,7 +123,7 @@ function valider(){
     this.setAttribute('hidden', 'hidden')
     
     
-    if (value2 == 15){
+    if (value2 == box.length-1){
         var scorePercent = score/(box.length-1)*100
         percent.innerHTML = parseInt(scorePercent) + "%"
 
