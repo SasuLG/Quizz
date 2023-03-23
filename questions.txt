@@ -245,35 +245,35 @@ Konosuba/slime
     res) 
 2-
     res) 
-3-komi san
+3-komi san //
     res) 
 4-
     res) 
 5-
     res) 
-6-To your eternity
+6-To your eternity //
     res) 
-7-Tokyo 24-ku	
+7-Tokyo 24-ku //
     res) 
-8-dororo
+8-dororo //
     res) 
-9-invaded (ost/ending jsp)
+9-invaded //
     res) 
-10-Akebi-chan no Serafuku
+10-Akebi-chan no Serafuku //
     res) 
-11-Todomachi Game
+11-Todomachi Game //
     res) 
-12-Summer Time Render
+12-Summer Time Render //
     res) 
-13-Paripi Koumei
+13-Paripi Koumei //
     res) 
-14-Lycoris Recoil
+14-Lycoris Recoil //
     res) 
-15-Call of the Night (ending/ost ?)
+15-Call of the Night //
     res) 
-16-Overlord
+16-Overlord /
     res) 
-17-Grand blue
+17-Grand blue //
     res) 
 18-
     res) 
@@ -285,9 +285,35 @@ Konosuba/slime
     res) 
 22-
     res) 
-Cyberpunk: Edgerunners		
-The eminence in shadow
-link click
-+ tous les gros
-Jujutsu Kaisen
-Chainsaw man
+Cyberpunk: Edgerunners //		
+The eminence in shadow //
+link click//
+
+Jujutsu Kaisen //
+Chainsaw man//
+Black clover /
+nanatsu //
+TQQ //
+kaguya //
+demon slayer //
+fire force /
+op16 naruto //
+Haikyuu //
+Domestic Girlfriend //
+SAO /
+Tower of God //
+Toradora //
+Blue Exorcist //
+No Game no Life //
+Shigatsu wa kimi no uso //
+Akame Ga Kill /
+Mirai Nikki //
+Code Geass //
+Erased//
+Your Name//
+fireworks //
+MHA //
+TPN //
+SNK //
+
+(Parasite/noragami)

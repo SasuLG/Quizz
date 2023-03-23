@@ -2,6 +2,8 @@ var all = document.querySelector('#quizz')
 var all2 = document.querySelector('header')
 var all3 = document.querySelector('p')
 
+
+
 var alphabet = "abcdefghijklmnopqrstuvwxyzéè'.0123456789()"
 alphabet += " "
 
@@ -13,6 +15,8 @@ var next = document.querySelectorAll('.next')
 next.forEach(e=>{
     e.setAttribute('hidden', 'hidden')
 })
+
+
 var resultat = document.querySelector('#resPercent')
 resultat.setAttribute('hidden', 'hidden')
 
@@ -51,6 +55,11 @@ inputs.forEach((e)=>{
     //e.id = crypt(e.id, e.children[1].textContent)
 })
 
+var audio = document.querySelectorAll('audio')
+audio.forEach(e=>{
+    //e.hidden = true
+    //e.volume = 0.5
+})
 
 function res(){
     var value = this.value
@@ -75,10 +84,13 @@ function res(){
 }
 
 function valider(){
-
     var value2 = this.value
     var bon = false
     var bool = false
+    if (audio[value2] != undefined){
+        audio[value2].addEventListener('click', startAudio(value2))
+    }
+
     this.removeEventListener('click', valider)
     inputs.forEach(e=>{
         if (this.value == e.value){
@@ -180,6 +192,22 @@ function go(){
         all3.style.display = 'none'
     }
 
+}
+
+
+/*
+if (audio != undefined){
+    audio[0].hidden = false
+}
+*/
+
+function startAudio(value2){
+    if (audio[value2].hidden != true){
+        if (audio[value2] != undefined){
+            audio[value2-1].pause()
+            audio[value2].play();
+        }
+    }
 }
 
 /*

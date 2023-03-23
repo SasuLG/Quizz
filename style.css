@@ -291,6 +291,38 @@ span, p{
 audio{
     margin-left: 35%;
 }
+
+
+@media screen and (max-width: 500px) {
+    .quizzRes li{
+        width: 100%;
+    }
+    .quiznumber{
+        width: 30%;
+        top: -25px;
+    }
+    h2.quizzQuestion{
+        margin-top: 5%;
+    }
+    a{
+        width: 70%;
+    }
+    #choixQuizz a{
+        width: 100%;
+    }
+    #button a {
+        width: 100%;
+        margin: 5%;
+    }
+    #button{
+        flex-direction: column;
+    }
+    audio{
+        margin-left: 0;
+        width: 100%;
+    }
+
+}
 /*
 #43339d
 #f44242
