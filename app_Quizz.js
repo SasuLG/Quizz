@@ -2,7 +2,7 @@ var all = document.querySelector('#quizz')
 var all2 = document.querySelector('header')
 var all3 = document.querySelector('p')
 
-
+var goBonus = "justebonusenfait"
 
 var alphabet = "abcdefghijklmnopqrstuvwxyzéè'.0123456789()"
 alphabet += " "
@@ -30,7 +30,7 @@ var i = 0
 
 
 var inputs = document.querySelectorAll('li')
-var cheat = false;
+var oui = false;
 var box = document.querySelectorAll('.quiznumber')
 //var box = document.querySelectorAll('.quizzBox')
 
@@ -40,7 +40,7 @@ var buttons = document.querySelectorAll('.buttons')
 function cheater(){
     i++
     if (i >=10){
-        cheat = true
+        oui = true
         alert("c'est pas bien de tricher, mais bon pas grave")
     }
 }
@@ -98,29 +98,29 @@ function valider(){
             if (decrypt('wqzkgl', 'tricheur')== decrypt(e.id, e.children[1].textContent)){
                 e.children[1].style.backgroundColor = '#83bd71'
             }  
-            if ((decrypt('wqzkgl', 'tricheur') == decrypt(e.id, e.children[1].textContent) && e.children[0].style.backgroundColor == 'orange') || (cheat)){
+            if ((decrypt('wqzkgl', 'tricheur') == decrypt(e.id, e.children[1].textContent) && e.children[0].style.backgroundColor == 'orange') || (oui)){
                 box[e.value-1].style.backgroundColor = '#83bd71'
                 score ++
                 bon = true;
                 bool = true
                 e.parentElement.parentElement.classList.remove('loose')
                 e.parentElement.parentElement.classList.add('win')
-                if (cheat && e.children[1].style.backgroundColor == 'orange' ){
+                if (oui && e.children[1].style.backgroundColor == 'orange' ){
                     e.children[1].style.backgroundColor = '#83bd71'
                     
                 }
-                if (cheat){
+                if (oui){
                     score -= 0.75
                 }
             }else if (e.children[0].style.backgroundColor == 'orange'){
                 e.style.removeProperty("background-color")
-                if (!bon && !cheat){
+                if (!bon && !oui){
                     box[e.value-1].style.backgroundColor = '#f44242'
                 }
                 e.children[1].style.backgroundColor = '#cc3d6a'
                 if(!bool)e.parentElement.parentElement.classList.add('loose')
             }else{
-                if (!bon && !cheat){
+                if (!bon && !oui){
                     box[e.value-1].style.backgroundColor = '#f44242'
                     if(!bool)e.parentElement.parentElement.classList.add('loose')
                 }
@@ -190,6 +190,8 @@ function go(){
         all.style.display = 'none'
         all2.style.display = 'none'
         all3.style.display = 'none'
+        alert('voici la key pour aller au niveau bonus ' + goBonus)
+
     }
 
 }
@@ -210,9 +212,16 @@ function startAudio(value2){
     }
 }
 
-/*
-bonGod : dzrIzh
-mauBat : olyDlx
-tjrPas : vuvRlw
-tesNul : vpwPfp
-*/
+function Bonus(){
+    var body = document.querySelector('body')
+    if (body.id == 'bodyBonus'){
+        var res = prompt('Quelle est la clé du niveau Bonus ?')
+        if (res!=goBonus){
+            console.log('non')
+            body.style.display = 'none'
+            alert("Pas la bonne clé, termine d'abord le niveau Hard (50%)")
+        }
+    }
+
+}
+Bonus()
