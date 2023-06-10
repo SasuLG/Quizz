@@ -2,7 +2,6 @@ var all = document.querySelector('#quizz')
 var all2 = document.querySelector('header')
 var all3 = document.querySelector('p')
 
-var goBonus = "justebonusenfait"
 
 var alphabet = "abcdefghijklmnopqrstuvwxyzéè'.0123456789()"
 alphabet += " "
@@ -34,10 +33,10 @@ var oui = false;
 var box = document.querySelectorAll('.quiznumber')
 //var box = document.querySelectorAll('.quizzBox')
 
-box[4].addEventListener('click', cheater)
+box[4].addEventListener('click', ngnl)
 var buttons = document.querySelectorAll('.buttons')
 
-function cheater(){
+function ngnl(){
     i++
     if (i >=10){
         oui = true
@@ -58,7 +57,7 @@ inputs.forEach((e)=>{
 var audio = document.querySelectorAll('audio')
 audio.forEach(e=>{
     //e.hidden = true
-    //e.volume = 0.5
+    e.volume = 0.7
 })
 
 function res(){
@@ -195,6 +194,7 @@ function go(){
     }
 
 }
+var goBonus = "justebonusenfait"
 
 
 /*
@@ -207,7 +207,9 @@ function startAudio(value2){
     if (audio[value2].hidden != true){
         if (audio[value2] != undefined){
             audio[value2-1].pause()
-            audio[value2].play();
+            setTimeout(()=>{
+                audio[value2].play();
+            },2000)
         }
     }
 }
